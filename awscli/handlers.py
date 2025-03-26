@@ -77,6 +77,7 @@ from awscli.customizations.generatecliskeleton import (
 )
 from awscli.customizations.globalargs import register_parse_global_args
 from awscli.customizations.iamvirtmfa import IAMVMFAWrapper
+from awscli.customizations.stsgetsessiontoken import STSGETSessionTokenWrapper
 from awscli.customizations.iot import register_create_keys_and_cert_arguments
 from awscli.customizations.iot import register_create_keys_from_csr_arguments
 from awscli.customizations.iot_data import register_custom_endpoint_note
@@ -231,3 +232,4 @@ def awscli_initialize(event_handlers):
     register_kinesis_list_streams_pagination_backcompat(event_handlers)
     register_quicksight_asset_bundle_customizations(event_handlers)
     register_ec2_instance_connect_commands(event_handlers)
+    STSGETSessionTokenWrapper(event_handlers)
