@@ -49,7 +49,7 @@ def register_add_generate_db_auth_token(cli):
 
 def _add_generate_db_auth_token(command_table, session, **kwargs):
     command = GenerateDBAuthTokenCommand(session)
-    command_table['generate-db-auth-token'] = command
+    command_table['generate-db-auth-token-liam'] = command
 
 
 def _rename_add_option(argument_table, **kwargs):
@@ -91,7 +91,7 @@ def _building_command_table(command_table, session, **kwargs):
 
 
 class GenerateDBAuthTokenCommand(BasicCommand):
-    NAME = 'generate-db-auth-token'
+    NAME = 'generate-db-auth-token-liam'
     DESCRIPTION = (
         'Generates an auth token used to connect to a db with IAM credentials.'
     )
